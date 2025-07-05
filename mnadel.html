@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المناديل - Souvenirs.0_0</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 100px;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            padding: 10px 20px;
+        }
+
+            header a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .media-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+            .media-gallery img,
+            .media-gallery video {
+                max-width: 100%;
+                width: 300px;
+                border-radius: 8px;
+            }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            .back-link:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="Souvenirs.0_0.html">⬅ الرجوع للصفحة الرئيسية</a>
+    </header>
+
+    <main>
+        <h1>كل صور قسم المناديل</h1>
+        <div class="media-gallery">
+            <img id="image" src="mnadel/1.jpg" alt="مناديل 1" onclick="openPopup(this.src)">
+            <img id="image" src="mnadel/2.jpg" alt="مناديل 2" onclick="openPopup(this.src)">
+            <img id="image" src="mnadel/3.jpg" alt="مناديل 3" onclick="openPopup(this.src)">
+            <img id="image" src="mnadel/4.jpg" alt="مناديل 4" onclick="openPopup(this.src)">
+            
+
+        </div>
+        <a class="back-link" href="Souvenirs.0_0.html">⬅ عودة للصفحة الرئيسية</a>
+    </main>
+    <div id="popup-container" onclick="closePopup()">
+        <span id="popup-close">&times;</span>
+        <div id="popup-content" onclick="event.stopPropagation();">
+            <div id="popup-image-container">
+                <img id="popup-image" src="" alt="صورة مكبرة">
+            </div>
+
+            <div style="margin-top: 10px;">
+                <button onclick="zoomIn()">➕ تكبير</button>
+                <button onclick="zoomOut()">➖ تصغير</button>
+            </div>
+
+            <a id="popup-download" href="" download>تحميل الصورة</a>
+        </div>
+    </div>
+</body>
+</html>
